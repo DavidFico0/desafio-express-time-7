@@ -49,6 +49,10 @@ const usuarioController = {
             fs.writeFileSync(pathUsuario, readUsuario);
         }
 
+        readUsuario = JSON.stringify(readUsuario);
+
+        fs.writeFileSync(pathUsuario, readUsuario);
+        
         res.render("salvarUsuario", {title: "Cadastro Sucesso"});
 
         
