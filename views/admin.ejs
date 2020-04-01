@@ -1,0 +1,42 @@
+<%- include('./partials/header') %>
+
+<main class="container text-center py-5 my-5">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+                <th>Email</th>
+        
+          </tr>
+        </thead>
+        <tbody>
+        <% for(let lista of listaNewsletter.inscritos){ %>       
+          <tr>
+            <td><%= lista %></td>
+          </tr>
+        <%}%>
+        </tbody>
+      </table>
+
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% for(let contato of listaContato.contatos){ %>       
+          <tr>
+            <td><%= contato.nome %></td>
+            <td><%= contato.email %></td>
+            <td><%= contato.mensagem %></td>
+          </tr>
+        <%}%>
+        </tbody>
+      </table>
+    
+
+</main>
+<%- include('./partials/footer') %>
