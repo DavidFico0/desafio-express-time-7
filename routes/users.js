@@ -1,9 +1,15 @@
 var express = require('express');
 var router = express.Router();
+const multer = require("multer");
+const path = require("path");
+const fs = require("fs");
+const usuarioController = require("../controllers/usuarioController");
+
+
+
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get('/cadastroUsuario', usuarioController.registroUsuario);
+router.post("/salvarUsuario", usuarioController.salvarUsuario);
 
 module.exports = router;

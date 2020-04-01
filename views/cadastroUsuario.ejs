@@ -1,0 +1,16 @@
+<%- include('./partials/header') %>
+
+<main class="container text-center py-5 my-5">
+
+    <form action="/users/salvarUsuario" method="POST">
+        <label for="">Nome:</label>
+        <input type="text" name="nome">
+        <label for="">Email:</label>
+        <input type="email" name="email">
+        <label for="">Senha:</label>
+        <input type="password" name="senha">
+        <button type="submit">Cadastrar</button>
+    </form>
+
+</main>
+<%- include('./partials/footer') %>
