@@ -1,0 +1,14 @@
+<%- include('./partials/header') %>
+
+<main class="container text-center py-5 my-5">
+
+  <form action="/users/formLogin" method="POST">
+    <label for="">Login:</label>
+    <input type="text" name="email">
+    <label for="">Senha:</label>
+    <input type="password" name="senha">
+    <button type="submit">Logar</button>
+</form>
+
+</main>
+<%- include('./partials/footer') %>

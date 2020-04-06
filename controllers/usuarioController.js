@@ -57,8 +57,30 @@ const usuarioController = {
 
         
 
-    }
+    },
 
+    loginForm: (req, res) => {
+      res.render(
+        'login', 
+        { title: 'Login'}
+      );
+    },
+    usuarioLogado: (req,res) => { 
+      let {email, senha} = req.body;
+      let listaUsuario = fs.readFileSync(pathUsuario, { encoding:'utf-8'});
+      listaUsuario = JSON.parse(listaUsuario);
+      for(let usuario of listaUsuario){
+        console.log(usuario);
+        if(!bcrypt.compareSync(senha, usuario.senha)){
+          res.send('A senha e invalida');
+        }
+        req.session.usuario = listaUsuario;
+        res.redirect('/admin');
+      }
+      console.log('sucesso'); 
+     
+    }
   }
+  
   
   module.exports = usuarioController;
